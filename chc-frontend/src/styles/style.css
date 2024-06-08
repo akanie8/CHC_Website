@@ -1,0 +1,206 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  header {
+    background-color: #007bff;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  /* Home Page */
+  .home-container {
+    text-align: center;
+  }
+  
+  .home-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .home-container p {
+    font-size: 1.2em;
+  }
+  
+  /* Send Prayer Request Page */
+  .prayer-request-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .prayer-request-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .prayer-request-container form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .prayer-request-container form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .prayer-request-container form .form-group input,
+  .prayer-request-container form .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .prayer-request-container form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .prayer-request-container form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* About Page */
+  .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-container p {
+    font-size: 1.2em;
+  }
+  
+  /* Podcast Page */
+  .podcast-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .podcast-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Contact Page */
+  .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-container form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .contact-container form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .contact-container form .form-group input,
+  .contact-container form .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .contact-container form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact-container form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Login Page */
+  .login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-container .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .login-container .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .login-container .form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .login-container .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-container button:hover {
+    background-color: #0056b3;
+  }
+  
