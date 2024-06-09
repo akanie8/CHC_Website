@@ -1,42 +1,51 @@
+
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './screens/Home';
 import PrayerRequest from './screens/PrayerRequest';
 import About from './screens/About';
-import Podcast from './screens/PodCast';
+import PodCast from './screens/PodCast';
 import Contact from './screens/Contact';
 import Login from './screens/Login';
+import logo from './assets/logo-chc.png';
+import './styles/style.css';
 
-import './styles/style.css'
 function App() {
   return (
-    <Router>
-      <div>
-        <header>
-          <nav>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/prayer-request">Send Prayer Request</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/podcast">Podcast</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-              <li><Link to="/login">Login</Link></li>
-            </ul>
-          </nav>
-        </header>
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/prayer-request" element={<PrayerRequest />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/podcast" element={<Podcast />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </div>
-      </div>
-    </Router>
+    <>
+      <header>
+        <nav>
+          <Link to="/">
+            <img src={logo} alt="Logo" className="logo" />
+          </Link>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/PrayerRequest">Send Prayer Request</Link></li>
+            <li><Link to="/About">About</Link></li>
+            <li><Link to="/PodCast">Podcast</Link></li>
+            <li><Link to="/Contact">Contact</Link></li>
+            <li><Link to="/Login">Login</Link></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/PrayerRequest" element={<PrayerRequest />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/PodCast" element={<PodCast />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Login" element={<Login/>} />
+        </Routes>
+      </main>
+    </>
   );
 }
 
-export default App;
+export default function AppWrapper() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}
