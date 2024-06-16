@@ -1,0 +1,39 @@
+/* start up button */
+
+
+.neon-loader {
+    display: flexbox;
+    align-self: center;
+    font: 40px;
+    justify-content: center;
+    width: 15rem;
+    height: 7rem;
+    border-radius: 60px;
+    background-color: #00ffee;
+    text-decoration:aliceblue;
+    animation: neon-loader 1s infinite alternate;
+    background-color: #00ffff;
+    
+  }
+  
+  .neon-loader:hover{
+    background-color: #4a9de4 !important;
+    animation-play-state: paused;
+    box-shadow: 0 0 10px #00ffff,
+                0 0 30px #00ffff,
+                0 0 60px #00ffff;
+  }
+  
+  
+
+  
+  @keyframes neon-loader {
+    from {
+      background-color: #0ced84da;
+    }
+    to {
+      background-color: #43e51b;
+    }
+  }
+
+  

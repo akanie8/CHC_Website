@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/style.css';
 import '../styles/home.css'; // Add a separate CSS file for home-specific styles
-
+import '../styles/Buttons.css'
 
 function Home() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -28,13 +28,19 @@ function Home() {
       <div className="header">
         <button className="menu-btn" onClick={toggleSidebar}>&#9776;</button>
 		
-		<div class="sign">
-			<span class="fast-flicker">For The</span>
-			Glory<span class="flicker">of</span> God
+		<div className="sign">
+			<span className="fast-flicker" style={{display: 'block'}}>Welcome To</span>
+			<span className='flicker' style={{display: 'flex'}}>Christian House Church</span>
 		</div>
-
         
       </div>
+	  
+	  <button className='neon-loader'>
+		
+		<h2 style={{color: 'white'}}><span>Join the family Now!</span></h2>
+		
+	  </button>
+	  
       <div className="content">
         <h2>Join Us for Worship</h2>
         <p>Every Sunday at 10:00 AM</p>
