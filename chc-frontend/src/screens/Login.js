@@ -12,7 +12,7 @@ function Login() {
       setErrorMessage('Please enter both username and password.');
       return;
     }
-    // Clear error message
+    // Clear error message/error stream
     setErrorMessage('');
     // Handle login logic here
     console.log('Username:', username);

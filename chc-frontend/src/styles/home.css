@@ -47,14 +47,43 @@
     margin: 20px;
     box-shadow: 0 4px 8px rgba(21, 20, 20, 0.2);
     color: rgb(255, 255, 255);
+    padding-top: 20px;
   }
   
   .content h2 {
-    font-size: 32px;
+    font-size: 50px;
+    position: flex;
+    margin-top: -100px;
+    text-decoration: none;
+    color: inherit;
   }
   
   .content p {
-    font-size: 18px;
+    font-size: 35px;
+    bottom: -1.5pc;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    letter-spacing: 5px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: rgb(233, 238, 238);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine 5s linear infinite;
+    position: relative;
+
+  }
+
+  @keyframes shine{
+    0%{
+        background-position-x: -500%;
+    }
+
+    100%{
+        background-position-x: 500%;
+    }
   }
   
   .menu-btn {
