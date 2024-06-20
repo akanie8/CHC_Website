@@ -74,8 +74,8 @@ function Home() {
         <button className="menu-btn" onClick={toggleSidebar}>&#9776;</button>
 		
 		<div className="sign">
-			<span className="fast-flicker" style={{display: 'block'}}>Welcome To</span>
-			<span className='flicker' style={{display: 'flex'}}>Christian House Church</span>
+			<span className="fast-flicker" style={{display: 'block'}}>Welcome ✞o</span>
+			<span className='flicker' style={{display: 'flex'}}>Chris✟ian House Church.</span>
 		</div>
         
       </div>

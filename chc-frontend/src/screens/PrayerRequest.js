@@ -3,13 +3,16 @@ import React, { useState } from 'react';
 function PrayerRequest() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhoneNumber] = useState('');
   const [message, setMessage] = useState('');
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Name:', name);
     console.log('Email:', email);
     console.log('Message:', message);
+    console.log('phone:', phone);
     
   };
 
@@ -35,6 +38,17 @@ function PrayerRequest() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Phone Number:
+            <input
+              type="number"
+              value={phone}
+              onChange={(e) => setPhoneNumber(e.target.value)}
               required
             />
           </label>
