@@ -388,4 +388,27 @@
       opacity: 1;
     }
   }
-  
+
+  /* Team section css */
+
+.team-members-section{
+  padding:  50px 0;
+  background-color: #83d9ee;
+}
+
+.team-members-section .container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-members-section .row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: centre;
+}
+
+@media (max-width: 768px){
+  .team-members-section .container{
+    padding: 0 15px;
+  }
+}

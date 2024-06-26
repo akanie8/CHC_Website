@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
+import '../styles/PrayerRequest.css';
 
 function PrayerRequest() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhoneNumber] = useState('');
   const [message, setMessage] = useState('');
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Name:', name);
     console.log('Email:', email);
     console.log('Message:', message);
-    console.log('phone:', phone);
-    
+    console.log('Phone:', phone);
   };
 
   return (
-    <div>
+    <div className="prayer-request-container">
       <h1>Send Prayer Request</h1>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label>
             Name:
             <input
@@ -31,7 +30,7 @@ function PrayerRequest() {
             />
           </label>
         </div>
-        <div>
+        <div className="form-group">
           <label>
             Email:
             <input
@@ -42,18 +41,18 @@ function PrayerRequest() {
             />
           </label>
         </div>
-        <div>
+        <div className="form-group">
           <label>
             Phone Number:
             <input
-              type="number"
+              type="tel"
               value={phone}
               onChange={(e) => setPhoneNumber(e.target.value)}
               required
             />
           </label>
         </div>
-        <div>
+        <div className="form-group">
           <label>
             Message:
             <textarea
@@ -63,9 +62,7 @@ function PrayerRequest() {
             />
           </label>
         </div>
-        <div>
-          <button type="submit">Send Request</button>
-        </div>
+        <button type="submit">Send Request</button>
       </form>
     </div>
   );

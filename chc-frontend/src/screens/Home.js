@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/style.css';
 import '../styles/home.css'; // Add a separate CSS file for home-specific styles
 import '../styles/Buttons.css'
-
+import Committee from '../components/Committee';
 function Home() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -53,7 +53,6 @@ function Home() {
 		}, 1000);
 		return () => clearInterval(timer);
 	 }, []);
-  
 
   return (
     <div className="home-container">
@@ -80,8 +79,6 @@ function Home() {
         
       </div>
 
-	 
-
 	  <div>
 		{message ? (
 			<h2>{message}</h2>
@@ -99,10 +96,7 @@ function Home() {
 		
 	  </button>
 	 
-	  
-      
     </div>
-
 	
   );
 }
