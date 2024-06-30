@@ -11,6 +11,7 @@ function NavBar() {
         <li><Link to="/podcast">Podcast</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <li><Link to="/login">Login</Link></li>
+        <li><Link to="/SignUp">Sign Up</Link></li>
       </ul>
     </nav>
   );

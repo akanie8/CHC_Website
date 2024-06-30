@@ -38,7 +38,12 @@ function Home() {
 		const currentMinutes = now.getMinutes();
 
 		if(currentDay === 0 && currentHour >= 10 && currentHour	< 12){
-			return 'Service UnderWay';
+			
+			return(
+				<div>
+					<h1>SERVICE UNDERWAY</h1>
+				</div>
+			);
 		}
 		return '';
 	 };
@@ -66,6 +71,7 @@ function Home() {
             <li><a href="/PodCast">Podcast</a></li>
             <li><a href="/Contact">Contact</a></li>
             <li><a href="/Login">Login</a></li>
+			<li><a href="/SignUp">Sign Up</a></li>
           </ul>
         </nav>
       </div>
@@ -93,6 +99,7 @@ function Home() {
 	  <button className='neon-loader'>
 		
 		<h2 style={{color: 'white'}}><span>Join the family Now!</span></h2>
+		<h1></h1>
 		
 	  </button>
 	 

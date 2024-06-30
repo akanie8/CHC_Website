@@ -7,6 +7,7 @@ import About from './screens/About';
 import PodCast from './screens/PodCast';
 import Contact from './screens/Contact';
 import Login from './screens/Login';
+import SignUp from './screens/SignUp';
 import logo from './assets/logo-chc.png';
 import './styles/style.css';
 
