@@ -7,7 +7,7 @@ import About from './screens/About';
 import PodCast from './screens/PodCast';
 import Contact from './screens/Contact';
 import Login from './screens/Login';
-import SignUp from './screens/SignUp';
+import MemberReg from './screens/MemberReg';
 import logo from './assets/logo-chc.png';
 import './styles/style.css';
 
@@ -26,6 +26,7 @@ function App() {
             <li><Link to="/PodCast">Podcast</Link></li>
             <li><Link to="/Contact">Contact</Link></li>
             <li><Link to="/Login">Login</Link></li>
+            <li><Link to="/MemberReg">Become A Member</Link></li>
           </ul>
         </nav>
       </header>
@@ -37,6 +38,7 @@ function App() {
           <Route path="/PodCast" element={<PodCast />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Login" element={<Login/>} />
+          <Route path="/MemberReg" element={<MemberReg/>} />
         </Routes>
       </main>
     </>
