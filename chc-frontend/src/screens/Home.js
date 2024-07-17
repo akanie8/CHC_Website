@@ -75,16 +75,7 @@ function Home() {
           </ul>
         </nav>
       </div>
-      <div className="header">
-        <button className="menu-btn" onClick={toggleSidebar}>&#9776;</button>
-		
-		<div className="sign">
-			<span className="fast-flicker" style={{display: 'block'}}>Welcome ✞o</span>
-			<span className='flicker' style={{display: 'flex'}}>Chris✟ian House Church.</span>
-		</div>
-        
-      </div>
-
+     
 	  <div>
 		{message ? (
 			<h2>{message}</h2>
