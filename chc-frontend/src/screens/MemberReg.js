@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import "../styles/PrayerRequest.css";
+import axios from "axios";
 function MemberReg(){
 
-    const [FirstName, setFirst] = useState('');
-    const [LastName, setLast] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [LastName, setLastName] = useState('');
     const [Gender, setGender] = useState('');
+    const [email, setEmail] = useState('');
     const [Address, setAddress] = useState('');
     const [joindate, setJoinDate] = useState('');
     const [password, setPassword] = useState('');
@@ -15,7 +18,7 @@ function MemberReg(){
         e.preventDefault();
 
         const memberData = {
-            FirstName,
+            firstName,
             LastName,
             email,
             Gender,
@@ -27,43 +30,37 @@ function MemberReg(){
             isServing,
         };
 
-        fetch('http://localhost:3000/Member', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json', 
-            },
-            body: JSON.stringify(memberData),
+        axios.post('http://localhost:3000/Member', memberData, {
+          headers: {
+            'Content-Type': 'application/json',
+          }
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
+        .then(response =>{
+          console.log('Success:', response.data);
 
-                setFirst('');
-                setLast('');
-                setEmail('');
-                setGender('');
-                setAddress('');
-                setJoinDate('');
-                setPassword('');
-                setPhone('');
-                setOccupation('');
-                setIsServing(false);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            })
+          setFirstName('');
+          setLastName('');
+          setEmail('');
+          setGender('');
+          setAddress('');
+          setJoinDate('');
+          setPassword('');
+          setPhone('');
+          setOccupation('');
+          setIsServing('');
+        })
     }
     return(
-        <div className="member-registration-container">
-        <h1>Register Member</h1>
+        <div className="prayer-request-container">
+        <h1>Become A Member Today!</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>
               First Name:
               <input
                 type="text"
-                value={firstname}
-                onChange={(e) => setFirstname(e.target.value)}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
                 required
               />
             </label>
@@ -73,8 +70,8 @@ function MemberReg(){
               Last Name:
               <input
                 type="text"
-                value={lastname}
-                onChange={(e) => setLastname(e.target.value)}
+                value={LastName}
+                onChange={(e) => setLastName(e.target.value)}
                 required
               />
             </label>
@@ -94,7 +91,7 @@ function MemberReg(){
             <label>
               Gender:
               <select
-                value={gender}
+                value={Gender}
                 onChange={(e) => setGender(e.target.value)}
                 required
               >
@@ -110,7 +107,7 @@ function MemberReg(){
               Address:
               <input
                 type="text"
-                value={address}
+                value={Address}
                 onChange={(e) => setAddress(e.target.value)}
                 required
               />
@@ -123,13 +120,14 @@ function MemberReg(){
                 type="date"
                 value={joindate}
                 onChange={(e) => setJoinDate(e.target.value)}
+                max={new Date().toISOString().split("T")[0]}
                 required
               />
             </label>
           </div>
           <div className="form-group">
             <label>
-              Password:
+              Create Password:
               <input
                 type="password"
                 value={password}
@@ -162,15 +160,31 @@ function MemberReg(){
           </div>
           <div className="form-group">
             <label>
-              Is Serving:
-              <input
-                type="checkbox"
-                checked={isServing}
-                onChange={(e) => setIsServing(e.target.checked)}
-              />
+              Are You Already Serving?
             </label>
+            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr' , marginLeft: '10px', marginTop: '5px'}}>
+              <label style={{marginRight: '10px'}}>
+                Yes
+                <input
+                  type="checkbox"
+                  checked={isServing === 'yes'}
+                  onChange={(e) => setIsServing(e.target.checked ? 'yes' : (isServing === 'yes' ? '' : isServing))}
+                  style={{marginLeft: '5px'}}
+                />
+                
+              </label>
+              <label style={{marginLeft:'40px'}}>
+                No
+                <input
+                  type="checkbox"
+                  checked={isServing === "no"}
+                  onChange={(e) => setIsServing(e.target.checked ? 'no' : (isServing === 'yes' ? '' : isServing))}
+                  style={{marginLeft: '5px'}}
+                />
+              </label>
+            </div>
           </div>
-          <button type="submit">Register Member</button>
+          <button type="submit">Join Now!</button>
         </form>
       </div>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import "../styles/PrayerRequest.css";
 function Contact() {
 
 const [name, setName] = useState('');
@@ -17,10 +17,11 @@ const handleSubmit = (e) => {
   };
 
   return (
-    <div>
+    <div className='prayer-request-container'>
       <h1>Contact Us</h1>
-      <form>
-      <div>
+      <form onSubmit={handleSubmit}>
+        <div className='form-group'>
+      <div> 
           <label>
             Name:
             <input
@@ -45,7 +46,7 @@ const handleSubmit = (e) => {
         <div>
           <label>
             Phone Number:
-            <textarea
+            <input
               value={number}
               onChange={(e) => setNumberPhone(e.target.value)}
               required
@@ -64,6 +65,7 @@ const handleSubmit = (e) => {
         </div>
         <div>
           <button type="submit">Contact Now!</button>
+        </div>
         </div>
       </form>
     </div>

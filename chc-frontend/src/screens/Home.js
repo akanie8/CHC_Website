@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/style.css';
 import '../styles/home.css'; // Add a separate CSS file for home-specific styles
 import '../styles/Buttons.css'
-import Committee from '../components/Committee';
+
 function Home() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -71,7 +71,7 @@ function Home() {
             <li><a href="/PodCast">Podcast</a></li>
             <li><a href="/Contact">Contact</a></li>
             <li><a href="/Login">Login</a></li>
-			<li><a href="/SignUp">Sign Up</a></li>
+			<li><a href="/SignUp">Become A Member</a></li>
           </ul>
         </nav>
       </div>
