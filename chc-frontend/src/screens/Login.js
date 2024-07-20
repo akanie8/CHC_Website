@@ -1,23 +1,29 @@
+import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (event) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async(event) => {
     event.preventDefault();
-    // Simple validation
-    if (username === '' || password === '') {
-      setErrorMessage('Please enter both username and password.');
-      return;
+    
+    try{
+      const response = await axios.post('http://localhost:3001/Login',{email, password});
+      setErrorMessage(response.data.errorMessage);
+      navigate('/Dashboard');
+
+    }catch(error){
+        if(error.response && error.response.data){
+          setErrorMessage(error.response.data.errorMessage);
+        } else {
+          setErrorMessage("An error has occurred");
+        }
     }
-    // Clear error message/error stream
-    setErrorMessage('');
-    // Handle login logic here
-    console.log('Username:', username);
-    console.log('Password:', password);
-    // Redirect or show success message
   };
 
   return (
@@ -30,8 +36,8 @@ function Login() {
             type="text"
             id="username"
             name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
@@ -49,6 +55,7 @@ function Login() {
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         <button type="submit">Login</button>
       </form>
+      {errorMessage && <p>{errorMessage}</p>}
     </div>
   );
 }
