@@ -10,12 +10,13 @@ async function createConnection() {
             database: process.env.DB_NAME,
             port: process.env.DB_PORT
         });
-        console.log('Successfully Connected to mySQL');
+        console.log('Successfully Connected to MySQL');
         return connection;
     } catch (err) {
-        console.error('Sorry, cannot connect to mySQL', err);
+        console.error('Error connecting to MySQL:', err);
         throw err;
     }
 }
 
 module.exports = createConnection;
+
